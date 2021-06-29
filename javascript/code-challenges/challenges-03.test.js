@@ -60,10 +60,13 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let oddNum = arr.filter(odd =>{
-    return odd % 2 !== 0;
+  let newArr = [];
+  newArr = arr.filter((num) =>{
+    if(num%2 !== 0){
+      return num;
+    }
   })
-  return oddNum;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,12 +79,16 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  let newArr = arr.filter(number =>{
-    return !forbiddenValues.includes(number) 
+  let newArr = [];
+  newArr = arr.filter((num) =>{
+    for(let i=0;i<arr.length;i++){
+      if(!forbiddenValues.includes(num) ){
+        return num
+      }
+    }
   })
   return newArr;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
