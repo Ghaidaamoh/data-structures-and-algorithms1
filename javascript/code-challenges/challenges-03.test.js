@@ -24,14 +24,14 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  let numbers =arr.filter (number =>{
-    
-    return (number == parseInt(number));
-    
+  let newArr = [];
+  newArr = arr.filter((val) => {
+    if(typeof(val) == "number"){
+      return val;
+    }
   })
-  return numbers;
+  return newArr;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
