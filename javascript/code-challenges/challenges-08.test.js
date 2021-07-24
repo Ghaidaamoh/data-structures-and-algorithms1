@@ -56,8 +56,8 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
-  charArray.sort((a,b)=>{
-    return a.children.length - b.children.length;
+  charArray.sort((num1,num2)=>{
+    return num1.children.length - num2.children.length;
   })
   return charArray;
 
@@ -72,8 +72,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  let regex = /w/;
-  return regex.test(str);
+  let regex1 = /w/g;
+  return regex1.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,13 +117,16 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regex = /[A-Z][a-z]+/g;
-  if(str.match(regex)){
-    return str.match(regex)
-  }else{
+  let regex2 = /\b[A-Z](\w)*/g;
+
+  let res = str.match(regex2);
+  if (res == null) {
     return [];
+  } else {
+    return res;
   }
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -133,8 +136,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /^[A-J]/;
-  return arr.filter(element =>regex.test(element));
+  let regex3 = /^[A-J]/;
+  return arr.filter(ele =>regex3.test(ele));
 };
 
 /* ------------------------------------------------------------------------------------------------
